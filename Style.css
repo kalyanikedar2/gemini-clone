@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+:root {
+    --text-color: #e3e3e3;
+    --subheading-color: #828282;
+    --placeholder-color: #a6a6a6;
+    --primary-color: #242424;
+    --secondary-color: #383838;
+    --secondary-hover-color: #444;
+}
+
+body {
+    background: var(--primary-color);
+    color: var(--text-color);
+}
+
+
+/* HEADER */
+
+.header {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 1rem;
+    text-align: left;
+}
+
+.header .title {
+    font-size: 2.7rem;
+    background: linear-gradient(to right, #4285f4, #d96570);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.header .subtitle {
+    font-size: 1.6rem;
+    color: var(--subheading-color);
+    margin-top: 0.3rem;
+}
+
+
+/* SUGGESTIONS */
+
+.suggestion-list {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.suggestion-list .suggestion {
+    background: var(--secondary-color);
+    padding: 1rem;
+    border-radius: 0.75rem;
+    width: 220px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.suggestion-list .suggestion:hover {
+    background: var(--secondary-hover-color);
+}
+
+
+/* CHAT LIST */
+
+.chat-list {
+    padding: 2rem 1rem 12rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+.message {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-top: 1.2rem;
+}
+
+.message-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.text {
+    background: var(--secondary-color);
+    padding: 1rem 1.2rem;
+    border-radius: 1rem;
+    line-height: 1.5;
+    max-width: 80%;
+    white-space: pre-wrap;
+}
+
+.message.outgoing .text {
+    background: #4285f4;
+    color: #fff;
+    margin-left: auto;
+}
+
+
+/* LOADING ANIMATION */
+
+.loading-indicator {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.loading-bar {
+    height: 10px;
+    border-radius: 5px;
+    background: linear-gradient(to right, #4285f4, var(--primary-color), #4285f4);
+    background-size: 800px 100%;
+    animation: loading 3s linear infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-position: -800px 0;
+    }
+    100% {
+        background-position: 800px 0;
+    }
+}
+
+
+/* TYPING AREA */
+
+.typing-area {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: var(--primary-color);
+    padding: 1rem;
+}
+
+.typing-form {
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.input-wrapper {
+    flex: 1;
+    position: relative;
+}
+
+.typing-input {
+    width: 100%;
+    height: 56px;
+    border: none;
+    border-radius: 50px;
+    padding: 0 3rem 0 1.2rem;
+    font-size: 1rem;
+    color: var(--text-color);
+    background: var(--secondary-color);
+}
+
+.typing-input:focus {
+    background: var(--secondary-hover-color);
+}
+
+.icon {
+    position: absolute;
+    right: 10px;
+    top: 8px;
+    cursor: pointer;
+    color: var(--text-color);
+    background: none;
+    border: none;
+}
+
+.disclaimer-text {
+    font-size: 0.85rem;
+    color: var(--placeholder-color);
+    text-align: center;
+    margin-top: 1rem;
+}
